@@ -1,0 +1,270 @@
+/* === General === */
+body{
+    height: fit-content;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background-color: #101d24;
+    box-sizing: border-box;
+}
+section{
+    height: fit-content;
+    width: 1200px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    background-color: #101d24;
+}
+
+/* === Navigation === */
+nav{
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 12px 0px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #101d24;
+}
+#nav-logo{
+    font-size: 32px;
+    font-family: 'Black Ops One';
+    text-decoration: none;
+    color: #979d9f;
+}
+nav a{
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: 'Poppins';
+    color: #979d9f;
+    text-decoration: none;
+    padding: 20px;
+    cursor: pointer;
+}
+nav a:hover{
+    color: #ffffff;
+    transition: ease-out 500ms;
+}
+nav a:hover i{
+    color: #ffffff;
+    transition: ease-out 500ms;
+}
+#nav-account{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#cart{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#product-counter{
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #304049;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Position */
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+#product-counter p{
+    /* Text */
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Poppins';
+    color: #ffffff;
+    margin: 0;
+}
+#nav-account p{
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Poppins';
+    color: #ffffff;
+}
+/* === || Navigation === */
+
+/* == BODY == */
+/* == Banner == */
+#banner{
+    height: 700px;
+    width: 100%;
+    position: relative;
+    background-color: #101d24;
+}
+#banner-text{
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(30%, 120%);
+    
+    box-sizing: border-box;
+    padding: 0px 0px 0px 20px;
+    border-left: 10px solid #ffffff;
+}
+#banner-text p:nth-child(1){
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Poppins';
+    margin: 0;
+}
+#banner-text p:nth-child(2){
+    color: #ffffff;
+    font-size: 64px;
+    font-weight: 800;
+    font-family: 'Poppins';
+    margin: 0;
+}
+#banner-text p:nth-child(3){
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Poppins';
+    margin: 0;
+}
+#banner-text button{
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    outline: none;
+    border: 0px;
+
+    background-color: #304049;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Josefin Sans';
+
+    margin: 30px 0px 0px 0px;
+}
+/* == || Banner == */
+
+
+/* == Category == */
+#category{
+    height: fit-content;
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 10px 0px 0px 0px;
+    background-color: #101d24;
+}
+#category h3{
+    width: fit-content;
+    font-size: 26px;
+    font-weight: 900;
+    font-family: 'Poppins'; 
+    color: #707f88;
+    margin: 0px auto;
+}
+#category p{
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Poppins'; 
+    color: #ffffff;
+    margin: 0px auto;
+}
+#category-row{
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#category-row a{
+    height: 160px;
+    width: 160px;
+    margin: 0px 20px 0px 20px;
+    border: 1px solid #304049;
+    text-decoration: none;
+    display: block;
+}
+#category-row a i, p{
+    display: block;
+}
+#category-row a i{
+    font-size: 60px;
+    color: #304049;
+    margin: 40px 50px 0px 50px;
+}
+#category-row a p{
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 900;
+    font-family: 'Poppins'; 
+    color: #ffffff;
+    margin: 10px auto;
+    padding: 0px 0px 0px 5px;
+    border-left: 4px solid #ffffff;
+    position: relative;
+}
+#category-row a p:before{
+    height: 14px;
+    width: 5px;
+    animation: 0.5ms;
+    color: #ffffff7c;
+    position: absolute;
+    left: 0;
+}
+#category-row a:hover p:before{
+    width: 100px;    
+}
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* == || Cartegory == */
+
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* ==  == */
+/* == ||BODY == */
+
+/* == Footer == */
+footer{
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#copyright-text{
+    font-size: 14px;
+    font-weight: 800;
+    font-family: 'Zilla Slab Highlight';
+    color: #ffffff;
+}
+/* == || Footer == */
+
+
+/* == STORE == */
+/* == Row == */
+#store-row{
+    display: grid;
+    height: fit-height;
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 20px 20px;
+}
+#store-column{
+    height: 280px;
+    width: 360px;
+    box-shadow: 2px 2px 12px #00000000;
+}
+
+/* == || Row == */
+/* == || STORE == */

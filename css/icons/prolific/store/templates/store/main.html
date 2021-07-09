@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom</title>
+
+    <!-- == Stylesheet == -->
+    <link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+
+    <!-- == Font == -->
+    <link rel="stylesheet" href="{% static 'store/css/font.css' %}">
+
+    <!-- == Icons == -->
+    <link rel="stylesheet" href="{% static 'store/css/icons/css/all.css' %}">
+
+    <!-- == Bootstrap == -->
+    <link rel="stylesheet" href="{% static 'store/css/bootstrap/dist/css/bootstrap.min.css' %}">
+
+    <!-- == Script == -->
+    <script>
+        var user = '{{ request.user }}'
+
+        function getToken(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken');
+
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array with
+            var cookieArr == document.cookie.split(';');
+
+            // Loop through the array elements
+            for (var i = 0; i < cookieArr.length; i++){
+                var cookiePair = cookieArr[i].split("=");
+
+                /* Removing whitespaces at the beginning of the cookie name and compare it with the given string */
+                if ( name == cookiePair[0].trim() ){
+                    // Decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            // Return null if not found 
+            return null;
+        }
+
+        var cart = JSON.parse(getCookie('cart'))
+
+        if(cart == undefined){
+            cart = {}
+            console.log('Cart was created')
+            document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        }
+        console.log('Cart:', cart)
+    </script>
+
+</head>
+<body>
+    <!-- == Nav Bar == -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'store' %}">Ecom</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'store' %}">Store <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <a href="" class="btn btn-warning">Login</a>
+                    <a style="margin: 0px 0px 0px 10px; font-size: 18px; color: #ffffff;" href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i></a>
+                    <p style="color: #ffffff;" id="cart-total">{{ cartItems }}</p>
+                </div>
+            </div>
+        </nav>
+    <!-- == || Nav Bar == -->
+    <!-- == Container == -->
+    <div class="container" style="width: 1200px;">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <!-- == Script 
+    <script src="{% static 'store/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'store/js/jquery-3.2.1.slim.min.js' %}"></script>
+    <script src="{% static 'store/js/popper.min.js' %}"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="{% static 'store/js/cart.js' %}"></script>
+</body>
+</html>
